@@ -12,7 +12,7 @@ import MealDetailScreen from '../screens/MealDetailScreen';
 import FavoritesScreen from '../screens/FavoritesScreen';
 
 import { primaryColor, secondColor } from '../constants/Colors';
-import { Platform } from 'react-native';
+import { Platform, Text } from 'react-native';
 import FiltersScreen from '../screens/FiltersScreen';
 
 const defaultStackNavOptions = {
@@ -53,7 +53,9 @@ const tabScreenConfig = {
           size={25}
           color={tabInfo.tintColor}
         />
-      )
+      ),
+      tabBarColor: primaryColor,
+      tabBarLabel: Platform.OS === 'android' ? <Text style={{ fontFamily: 'open-sans-bold' }}>Meals</Text> : 'Meals'
     }
   },
   Favorites: {
@@ -64,7 +66,9 @@ const tabScreenConfig = {
           size={25}
           color={tabInfo.tintColor}
         />
-      )
+      ),
+      tabBarColor: primaryColor,
+      tabBarLabel: Platform.OS === 'android' ? <Text style={{ fontFamily: 'open-sans-bold' }}>Meals</Text> : 'Meals'
     }
   }
 };
